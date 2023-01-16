@@ -1,0 +1,100 @@
+{
+  "configVersion": 1,
+  "timestamp": 1673902626212,
+  "index": "/project-pwa/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/project-pwa/favicon.ico",
+        "/project-pwa/index.html",
+        "/project-pwa/main.4a275a36ee8072e1.js",
+        "/project-pwa/manifest.webmanifest",
+        "/project-pwa/polyfills.5b9b59f768055a7f.js",
+        "/project-pwa/runtime.2fb12237489a8c0c.js",
+        "/project-pwa/styles.dcdb86045089b9e4.css"
+      ],
+      "patterns": [
+        "https:\\/\\/cdn\\.jsdelivr\\.net\\/npm\\/bootstrap@5\\.0\\.2\\/dist\\/css\\/bootstrap\\.min\\.css"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/project-pwa/assets/css/animate.css",
+        "/project-pwa/assets/icons/icon-128x128.png",
+        "/project-pwa/assets/icons/icon-144x144.png",
+        "/project-pwa/assets/icons/icon-152x152.png",
+        "/project-pwa/assets/icons/icon-192x192.png",
+        "/project-pwa/assets/icons/icon-384x384.png",
+        "/project-pwa/assets/icons/icon-512x512.png",
+        "/project-pwa/assets/icons/icon-72x72.png",
+        "/project-pwa/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "digimon-api",
+      "patterns": [
+        "https:\\/\\/digimon-api\\.vercel\\.app\\/.*"
+      ],
+      "strategy": "freshness",
+      "maxSize": 10,
+      "maxAge": 3600000,
+      "timeoutMs": 1000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/project-pwa/assets/css/animate.css": "3dc70f1a3c29089a27418c9ce431cb439f41a5ad",
+    "/project-pwa/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/project-pwa/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/project-pwa/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/project-pwa/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/project-pwa/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/project-pwa/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/project-pwa/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/project-pwa/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/project-pwa/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/project-pwa/index.html": "405424222f405ad7855cf31cc1d256649a560f42",
+    "/project-pwa/main.4a275a36ee8072e1.js": "263deb1f78fac930053e55b112a22b03f10e512c",
+    "/project-pwa/manifest.webmanifest": "513f19e627dda4846a2fda30f7d2d82a7f01d772",
+    "/project-pwa/polyfills.5b9b59f768055a7f.js": "ee312c91d795c91c2ab4f72ebd394f93adc71420",
+    "/project-pwa/runtime.2fb12237489a8c0c.js": "081f24f439f1ffe8603c5eb68e5aadcb96e42b9e",
+    "/project-pwa/styles.dcdb86045089b9e4.css": "da7ca088099e27af8c77ced868e27dd3b3f18e84"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
