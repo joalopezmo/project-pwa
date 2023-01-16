@@ -10,7 +10,7 @@ export class DigimonService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://digimon-api.vercel.app/api/digimon';
+    this.baseUrl = 'https://digimon-api.vercel.app/api/digimon';
   }
 
   // method http por retuns the array of all digimons
