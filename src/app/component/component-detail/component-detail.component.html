@@ -1,0 +1,38 @@
+<!-- Show the digimon in detail -->
+<mat-card *ngFor="let digimon of digimons">
+    <mat-card-header>
+        <mat-card-title>
+            <h1>{{digimon.name}}</h1>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <img src="{{digimon.img}}" alt="Digimon Image" class="img-fluid">
+            </div>
+
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+        <button mat-raised-button color="primary" (click)="showDetails()">Show all details</button>
+    </mat-card-actions>
+    <mat-card-content *ngIf="showAllDetails">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h2>Level: {{digimon.level}}</h2>
+                <h2>Attribute: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, at asperiores aliquam
+                    expedita tempora ut in quis maiores vero amet iste nihil sequi itaque adipisci odit aut doloribus
+                    inventore ad!</h2>
+                <h2>Memory: Eaque, at asperiores aliquam </h2>
+                <h2>Equip Slots: Eaque, at asperiores aliquam </h2>
+                <h2>HP: 10</h2>
+                <h2>SP: 10</h2>
+                <h2>Atk: 10</h2>
+                <h2>Def: 10</h2>
+                <h2>Int: 10</h2>
+                <h2>Spd: 10</h2>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

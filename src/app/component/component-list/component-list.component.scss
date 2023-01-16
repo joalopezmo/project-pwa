@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+//filter to right
+
+mat-form-field {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+//put shadow on card
+mat-card {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,87 @@
+<!-- passing data from mat-table to mat-card in same component -->
+<div class="list">
+    <div class="buttons">
+        <!-- botones para elegir vista en lista o en cartas -->
+        <button mat-fab color="primary" aria-label="format_list_bulleted"
+            (click)="viewList()"><mat-icon>format_list_bulleted</mat-icon></button>
+        <button mat-fab color="primary" aria-label="dashboard"
+            (click)="viewCard()"><mat-icon>dashboard</mat-icon></button>
+
+    </div>
+
+
+    <div *ngIf="view">
+        <mat-form-field>
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+        </mat-form-field>
+
+        <mat-table [dataSource]="filterData" matSort
+            class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                <mat-cell *matCellDef="let element"
+                    [routerLink]="['/digimon', element.name]">{{element.name}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="level">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Level</mat-header-cell>
+                <mat-cell *matCellDef="let element"
+                    [routerLink]="['/digimon', element.name]">{{element.level}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="img">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Image</mat-header-cell>
+                <mat-cell *matCellDef="let element" [routerLink]="['/digimon', element.name]"><img src="{{element.img}}"
+                        alt="Digimon" width="100px" height="100px"></mat-cell>
+            </ng-container>
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page"
+                showFirstLastButtons>
+            </mat-paginator>
+        </mat-table>
+
+    </div>
+
+    <div *ngIf="!view">
+        <mat-grid-list cols="3" rowHeight="2:1">
+            <mat-grid-tile *ngFor="let digimon of dataSource">
+                <mat-card
+                    class="list-group-item list-group-item-action animate__animated animate__bounce animate__fadeIn">
+                    <mat-card-header [routerLink]="['/digimon', digimon.name]">
+                        <mat-card-title>{{digimon.name}}</mat-card-title>
+                        <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="{{digimon.img}}" [routerLink]="['/digimon', digimon.name]" alt="Digimon"
+                        width="100px" height="100px">
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <!-- <mat-card *ngFor="let digimon of dataSource">
+            <mat-card-header>
+                <mat-card-title>{{digimon.name}}</mat-card-title>
+                <mat-card-subtitle>{{digimon.level}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{digimon.img}}" alt="Digimon" width="100px" height="100px">
+            <mat-card-content>
+                <p>lorem ipsum </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card> -->
+
+    </div>
+
+
+
+</div>
